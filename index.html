@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>Video Player</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Video Player" />
+        <meta name="keywords" content="Video Player" />
+        <meta name="author" content="anwrsyd" />
+        <link href="./assets/css/main.css" rel="stylesheet" />
+        <link
+            href="./assets/fontawesome-free-6.7.1-web/css/all.min.css"
+            rel="stylesheet"
+        />
+        
+    </head>
+    <body>
+        <header class="bg-slate-600 py-4 flex justify-center">
+            <h1 class=" text-white text-xl text-center font-semibold">
+                Video Player
+            </h1>
+        </header>
+        <div class="justify-center flex bg-slate-600 min-h-screen p-4">
+            <div id="form">
+                <form method="get" class="mt-6 space-y-2">
+                    <input
+                        type="text"
+                        name="video"
+                        class="w-full p-2 rounded-lg focus:outline-none focus:border-0"
+                        placeholder="Enter Video URL"
+                        required
+                    />
+                    <button
+                        type="submit"
+                        class="w-full p-2 rounded-lg bg-slate-500 text-white"
+                    >
+                        Play
+                    </button>
+                </form>
+            </div>
+            <div id="main" class="flex justify-center">
+                <button
+                    id="playId"
+                    onclick="play()"
+                    class="z-[100] justify-center text-white text-4xl absolute md:top-1/2 bottom-[28rem]"
+                >
+                    <i class="z-[100] fa-solid fa-play"></i>
+                </button>
+
+                <div class="rounded-lg shadow-xl h-full">
+                    <video id="video" class="z-[99]">
+                        <source id="videoSrc" />
+                    </video>
+                    <div
+                        id="controlBar"
+                        class="w-full flex gap-4 rounded-b-lg text-white z-[100] p-5 text-xl bg-slate-500"
+                    >
+                        <button onclick="pause()">
+                            <i id="pauseIc" class="fa-solid fa-pause"></i>
+                        </button>
+                        <button onclick="skip()">
+                            <i class="fa-solid fa-forward"></i>
+                        </button>
+                        <button
+                            onclick="fullScreen()"
+                            class="absolute right-[2rem] md:right-[9rem]"
+                        >
+                            <i
+                                class="fa-solid fa-up-right-and-down-left-from-center"
+                            ></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="flex justify-center p-4 bg-slate-500 text-white">
+                <p>&copy; 2024 <a href="https://github.com/anwrsyd" class="font-medium text-gray-300">anwrsydd</a></p>
+            </div>
+        </footer>
+       <script src="./assets/js/jquery-3.7.1.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
